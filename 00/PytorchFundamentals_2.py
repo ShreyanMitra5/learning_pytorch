@@ -43,3 +43,16 @@ print("tensor_B transposed: ", tensor_B.T.shape)
 print("Matrix Multiplication: ", torch.matmul(tensor_A, tensor_B.T), torch.matmul(tensor_A, tensor_B.T).shape)
 
 #torch.mm --> short for matrix multiplication
+
+#Find the min, max, mean, sum (aggregation)
+
+tensor2 = torch.arange(0, 100, 10)
+print("\nMin: ", tensor2.min())
+print("Max: ", tensor2.max())
+print("Mean: ", tensor2.type(torch.float32).mean()) #can only work with float32
+print("Sum: ", tensor2.sum())
+
+#tensor.argmax() and tensor.argmin() gives index val on where the max & min occur
+
+#To cast the value (float32, let's say) to float16 we would need to do something like this --> tensor_float16 = tensor.type(torch.float16)
+#where tensor is a predefined tensor with float32 vals 
